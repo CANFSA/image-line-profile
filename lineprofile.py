@@ -40,15 +40,15 @@ def plot_img_and_line(img, line_pt0, line_pt1, ums_per_pixel, fig_w=7):
     return fig, axes
 
 # This block is run if file executed as script
-# if __name__ == '__main__':
-#     # Load image
-#     img_dir = Path(r'C:\Users\cgusb\Research\mhe-analysis\example-imgs')
-#     if not img_dir.exists():
-#         print('Directory not found')
-#     img_paths = [path for path in img_dir.glob('*.tif')]
-#     img = iio.imread(img_paths[0])
-#     # Plot image and intenisty
-#     ums_per_pixel = 2  # Dummy value
-#     fig, axes = plot_img_and_line(img, (250, 250), (500, 500), ums_per_pixel)
-#     plt.show()
+if __name__ == '__main__':
+    # Load image
+    img_dir = Path(r'example-imgs/')
+    if not img_dir.exists():
+        print('Directory not found')
+    img_paths = [path for path in img_dir.glob('*.tif')]
+    img = iio.imread(img_paths[0])
+    # Plot image and intenisty
+    ums_per_pixel = 2  # Dummy value
+    fig, axes = plot_img_and_line(img, (250, 250), (500, 500), ums_per_pixel)
+    plt.show()
 
